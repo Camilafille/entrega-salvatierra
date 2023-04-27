@@ -1,20 +1,33 @@
+/* Simulacion de toma de datos para comenzar una reserva en un hotel: 
+    Se pregunta si quiere hacer una reserva, en caso de que la respuesta sea si,
+    se realiza una serie de preguntas. En caso de que la respuesta sea otra, se le da la bienvenida a la página.
+    La información requerida en caso de querer comunicarse para realizar una reserva es: 
+-Nombre Completo
+-Cantidad de adultos y menores que desean hospedarse.
+-Fecha de ingreso.
+-Fecha de egreso.
+-Consultar precio de la habitacion por noche.
+-Mail.
+En caso de haber completado correctamente la informacion, se le da bienvenida a la página.
+En caso contrario, comienza el ciclo preguntando su nombre.</p> */
 
 
 
 //Variables
 
 let reserva = "si";
-let bienvenida = prompt("Bienvenido a nuestro Hotel, desea realizar una reserva?");
+const bienvenida = prompt("Bienvenido a nuestro Hotel, ¿Desea realizar una reserva?. Si su prespuesta es afirmativa ingrese SI.");
 
-//funcion
+
+//funciones
 function bienvenidaPagina(){
     let bienvenida = "Bienvenido/a a nuestra pagina web";
     alert(bienvenida)
 }
 
 function cantidadPersonas(){
-    let cantidadAdultos = parseInt(prompt("Ingrese cantidad de adultos"));
-        let cantidadMenores = parseInt(prompt("Ingrese cantidad de menores"));       
+    let cantidadAdultos = parseInt(prompt("Ingrese cantidad de adultos a hospedarse."));
+        let cantidadMenores = parseInt(prompt("Ingrese cantidad de menores a hospedarse."));       
         let personas = cantidadAdultos + cantidadMenores;
         alert(`La cantidad de personas ingresadas son ${personas}.`);
     }
@@ -25,31 +38,47 @@ function checking(){
     alert(`Check in: ${fechaCheckIn}, Check out: ${fechaCheckOut}`);   
 }
 
-
-
-//Loop
-
+//Loop: vamos a pedir cierta informacion al cliente para luego enviar un mail e iniciar la reserva:
 while(bienvenida.toLowerCase() === "si"){
         usuario = prompt("Ingrese su nombre y apellido");
-        let mensaje = `Hola ${usuario}`;
+        let mensaje = `Hola ${usuario} bienvenido a nuestro sistema de informacion. Ingrese los datos requeridos y nos contactaremos a la brevedad.`;
         alert(mensaje);        
-        cantidadPersonas()
-        checking()
-        let mail = prompt("Ingrese mail para ser contactado por nuestro staff");
-        let respuesta = prompt(`Estimado/a ${usuario}, usted ingreso el siguiente mail ${mail} para reservar el día ${fechaCheckIn} hasta el dia ${fechaCheckOut}. Es esta informacion correcta?`);  
-//Condicional
-        if(respuesta.toLowerCase() === "si"){
-            alert("Gracias por contactarnos! Nos comunicaremos a la brevedad via mail.");
-            break;
-        } 
-        
+        cantidadPersonas();
+        checking();
+//Le ofrecemos precios por noche de las habitaciones standar, superior y suite.
+        let habitacion = prompt("Para consultar el precio por noche de las habitaciones: Standar, Superior o Suite. Ingrese nombre de la habitación");
+        while (habitacion.toLowerCase() === "standar" || habitacion.toLowerCase() === "superior" || habitacion.toLowerCase() === "suite" ) {
+                    let precioStandar = 30000;
+                    let precioSuperior = 40000;
+                    let precioSuite = 48000;
+                    let iva = 0.21;
+                    if(habitacion.toLowerCase() === "standar"){
+                        precio = precioStandar + (precioStandar * iva);
+                        alert(`El precio por noche de una habitación Standar es ${precio}`);
+                        break;
+                    }else if (habitacion.toLowerCase() === "superior"){
+                        precio2 = precioSuperior + (precioSuperior * iva);
+                        alert(`El precio por noche de una habitación Superior es ${precio2}`);
+                        break;
+                    }else if (habitacion.toLowerCase() === "suite"){
+                        precio3 = precioSuite + (precioSuite * iva);
+                        alert(`El precio por noche de una habitación Suite es ${precio3}`);
+                        break;
+                    }
+            }
+        let mail = prompt("Ingrese mail para ser contactado por nuestro staff"); 
+        alert(`El mail ingresado es ${mail}` );
+        let respuesta = prompt("¿La información ingresada es correcta?. De ser afirmativo ingrese SI. ");
 
-}
+//Condicional: Si su informacion esta correcta, entonces le damos las gracias y si no lo esta, el ciclo vuelve a empezar.
+        if(respuesta.toLowerCase() === "si"){
+        alert("Gracias por contactarnos! Nos comunicaremos a la brevedad via mail.");
+        break;
+        } 
+    }
+
 
 bienvenidaPagina();
-
-
-
 
 
 
