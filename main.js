@@ -22,20 +22,20 @@ const bienvenida = prompt("Bienvenido a nuestro Hotel, ¿Desea realizar una rese
 //funciones
 function bienvenidaPagina(){
     let bienvenida = "Bienvenido/a a nuestra pagina web";
-    alert(bienvenida)
+    return alert(bienvenida);
 }
 
 function cantidadPersonas(){
     let cantidadAdultos = parseInt(prompt("Ingrese cantidad de adultos a hospedarse."));
         let cantidadMenores = parseInt(prompt("Ingrese cantidad de menores a hospedarse."));       
         let personas = cantidadAdultos + cantidadMenores;
-        alert(`La cantidad de personas ingresadas son ${personas}.`);
+        return alert(`La cantidad de personas ingresadas son ${personas}.`);
     }
 
 function checking(){
     let fechaCheckIn = prompt("Ingresa fecha estimada de check in");
     let fechaCheckOut = prompt("Ingresa fecha estimada de check out");
-    alert(`Check in: ${fechaCheckIn}, Check out: ${fechaCheckOut}`);   
+    return alert(`Check in: ${fechaCheckIn}, Check out: ${fechaCheckOut}`);   
 }
 
 //Loop: vamos a pedir cierta informacion al cliente para luego enviar un mail e iniciar la reserva:
