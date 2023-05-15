@@ -27,9 +27,9 @@ const cantidadPersonas = () => {
         
 
         const habitaciones = [
-            {nombre: "standar", precio: 30000},
-            {nombre: "superior", precio: 40000},
-            {nombre: "suite", precio: 48000},
+            {id: 1 , nombre: "standar", precio: 30000},
+            {id: 2 , nombre: "superior", precio: 40000},
+            {id: 3 , nombre: "suite", precio: 48000},
             ];
         
 
