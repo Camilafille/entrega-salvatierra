@@ -1,6 +1,15 @@
 
 
+<<<<<<< HEAD
 // RESERVA
+=======
+
+*/
+
+
+
+//Variables
+>>>>>>> 3a7b70efbc7fc244ae0122b9a2bccfb85e123f93
 
 let reserva = "si";
 const bienvenida = prompt("Bienvenido a nuestro Hotel, ¿Desea realizar una reserva?. Si su prespuesta es afirmativa ingrese SI.");
