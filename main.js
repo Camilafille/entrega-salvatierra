@@ -1,9 +1,6 @@
-/* 
 
 
-
-*/
-
+// RESERVA
 
 let reserva = "si";
 const bienvenida = prompt("Bienvenido a nuestro Hotel, ¿Desea realizar una reserva?. Si su prespuesta es afirmativa ingrese SI.");
@@ -34,6 +31,7 @@ const cantidadPersonas = () => {
         
 
 while(bienvenida.toLowerCase() === "si"){
+    
         usuario = prompt("Ingrese su nombre y apellido");
         let mensaje = `Hola ${usuario} bienvenido a nuestro sistema de información. Ingrese los datos requeridos y nos contactaremos a la brevedad.`;
         alert(mensaje);        
@@ -56,7 +54,7 @@ const habitacionSeleccionada = habitaciones.find((habitacion) => habitacion.nomb
 
 //Condicional: Si su informacion esta correcta, entonces le damos las gracias y si no lo esta, el ciclo vuelve a empezar.
         if(respuesta.toLowerCase() === "si"){
-        alert("Gracias por contactarnos! Nos comunicaremos a la brevedad via mail.");
+        alert( "Gracias por contactarnos! Nos comunicaremos a la brevedad via mail.");
         } 
         break;
     }
@@ -65,32 +63,38 @@ const habitacionSeleccionada = habitaciones.find((habitacion) => habitacion.nomb
 bienvenidaPagina();
 
 
-// Tenemos que: 
-
-/*  ELIMINAR COMENTARIOS DE CODIGO ACA. |v|
-    Cambiar funciones a funciones ARROw |v|
-    HTML
-    Agregar:
-    Funciones de orden superior,
-    Declarar variables
-    y objetos necesarios
-    Arrays
-    Metodos de busqueda y filtrado necesario 
-    
-    
-    
+// Funcion para saber en que habitacion esta un huesped:
 
 
-. Funciones que devuelvan funciones. En un hotel que puedo hacer? 
-- Puede ser que vos pongas la cantidad de dias y que habitacion queres usar, te devuleve el precio 
-qaca debes hacer una funcion que te calcule los dias 
-otra que te pregunte la habitacion que queres que debe tener un precio en su objeto
-y otra que multiplique los dias por el precio y que te devuelva el precio.
+const huespedes = [
+    { nombre: "Luis Rodriguez" , habitacion: 101 },
+    { nombre: "Mary Campos" , habitacion: 102 },
+    { nombre: "Camila Salas" , habitacion: 103 },
+    { nombre: "Franco Polo" , habitacion: 105 },
+    { nombre: "Luis Santorini" , habitacion: 107 },
+    { nombre: "Melisa Camaño" , habitacion: 109 },
+    { nombre: "Valeria Estévez" , habitacion: 104 },
+    { nombre: "Hernan Pérez", habitacion: 106 },
+    ];
+
+
+    let nombreHuesped = (prompt("Ingrese el nombre del huesped"));
+    const encontrado = huespedes.filter(item => item.nombre === nombreHuesped); 
+    encontrado.forEach(item => {
+        let mensaje = `
+            Nombre: ${item.nombre}
+            Habitacion: ${item.habitacion}
+            `;
+        
+            alert(mensaje);
+            });
 
 
 
 
-*/
+
+
+
 
 
 
