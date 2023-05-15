@@ -13,16 +13,6 @@ En caso contrario, comienza el ciclo preguntando su nombre.</p>
 
 
 
-Lo que podemos mejporar es : 
-calcular el precio de habitacion a corde a los dias que la persona plantea quedarse. 
-teniendo en cuenta el (precio base + (iva x precio base)) x dia.
-
-por ejemplo:
-precio base: 300 pesos.
-iva: 0,21
-dias: 3
-entonces: (300 + (iva x precio base)) x 3
-
 */
 
 
