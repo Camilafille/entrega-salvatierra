@@ -1,0 +1,7 @@
+[
+    { "id": 1, "nombre": "doble", "precio": 30000 },
+    { "id": 2, "nombre": "junior", "precio": 45000 },
+    { "id": 3, "nombre": "superior", "precio": 55000},
+    { "id": 4, "nombre": "suite", "precio": 60000 }
+  ]
+  

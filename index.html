@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Reservas|Hotel|Salvatierra</title>
+    <link rel="shortcut icon" href="./assets/hotel-rural-con-logo-de-montanas-de-tres-estrellas.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
 </head>
 <body>
@@ -15,27 +17,12 @@
                 <a href="./index.html">Hotel La Montagne
                     <img src="./assets/hotel-rural-con-logo-de-montanas-de-tres-estrellas.png" alt="icono-de-hotel"></a>
             </div>
-            <div class="burger-menu">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="dropdown">
-                    <ul>
-                        <li><a href="./index.html">INICIO</a></li>
-                        <li><a href="./pages/habitacion.html">HABITACIONES</a></li>
-                        <li><a href="./pages/resto-bar.html">RESTO-BAR</a></li>
-                        <li><a href="./pages/spa.html">SPA</a></li>
-                        <li><a href="./pages/actividades.html">ACTIVIDADES</a></li>
-                    </ul>
-            </div> 
-            </div> 
             <nav>
                 <ul class="barraNav ">
                     <li><a href="./index.html">INICIO</a></li>
                     <li><a href="./pages/habitacion.html">HABITACIONES</a></li>
                     <li><a href="./pages/resto-bar.html">RESTO-BAR</a></li>
                     <li><a href="./pages/spa.html">SPA</a></li>
-                    <li><a href="./pages/actividades.html">ACTIVIDADES</a></li>
                 </ul>
             </nav>
         </header>
@@ -122,46 +109,203 @@
                 
             </section>
             
-    
+            <section>
+                <div class="reserva">
+                    <h2>Habitaciones</h2>
+                </div>
+
+    <div class="divHabitaciones" id="divHabitaciones">
+                <div class="cardHabitacion">
+                    <div class="imagenH"> 
+                        <img  src="./assets/dos-camas-individuales_1203-18.jpg" alt=" habitacion">
+                    </div>
+                    <div class="contenidoH">
+                        <a href="#">
+                        <h3 class="tituloH">
+                        Habitacion doble
+                        </h3>
+                        </a>
+                    
+                        <p class="textoH">
+                            Equipada con dos camas individuales.
+                            <br>TV Plasma con cable.
+                            <br>Calefacción con control independiente.
+                            <br>Minibar.
+                        </p>
+                        <button class="accion" id="botonInfo">+Info</button>
+                    </div>
+                </div>
+
+                    <div class="cardHabitacion">
+                    <div class="imagenH"> <img  src="./assets/habitacion-ordenada-dos-lamparas-cortinas_1203-1475.jpg" alt=" habitacion">
+                    </div>
+                        <div class="contenidoH">
+                        <h3 class="tituloH">
+                            Habitacion  junior
+                        </h3>
+                        <p class="textoH">
+                        Equipada con una cama individual king size.
+                        <br>TV Plasma con cable.
+                        <br>Caja de seguridad con cerradura electrónica.
+                        <br>Calefacción con control independiente.
+                        <br>Minibar.</p>
+                    <button class="accion"  id="botonInfo">+Info</button>
+                        </div>
+                    </div>
+
+                    <div class="cardHabitacion">
+                        <div class="imagenH"> 
+                            <img  src="./assets/vojtech-bruzek-Yrxr3bsPdS0-unsplash (1).jpg" alt=" habitacion">
+                    </div>
+                        <div class="contenidoH">
+                            <h3 class="tituloH">
+                            Habitacion  Superior
+                            </h3>
+                        <p class="textoH">
+                        Equipada con una cama individual king size.
+                        <br>TV Plasma con cable.
+                        <br>Caja de seguridad con cerradura electrónica.
+                        <br>Calefacción con control independiente.
+                        <br>Minibar.</p>
+                        
+                            <button class="accion" id="botonInfo">+Info</button>
+                        </div>
+                    </div>
+
+                    <div class="cardHabitacion">
+                        <div class="imagenH"> <img  src="./assets/suite-dormitorio-moderno-clasico-lujo-hotel_105762-1787.webp" alt=" habitacion">
+                    </div>
+                    <div class="contenidoH">
+                            <h3 class="tituloH">
+                            Habitacion  Suite
+                            </h3>
+                        <p class="textoH">
+                            <br>Excelente vista panorámica a la montaña desde su balcón.
+                            <br> Cuenta con un pequeño living.
+                            <br>Caja de seguridad con cerradura electrónica.
+                            <br>Calefacción con control independiente.
+                            <br>Minibar.
+                            <br>capacidad máxima de 5 personas.
+                        </p>
+                    
+                        <button class="accion" id="botonInfo">+Info</button>
+                    </div>
+                    </div>
+                </div>
+
         <section>
                 <div class="reserva">
                     <h2><strong>HACE TU RESERVA </strong></h2>
                 </div>
     
-                <div class="reservaForm">
+                <div class="reservaForm" id="formularioReserva">
                     <form method="post" class="form" id="formulario">
                         <fieldset>
                         <legend class="title">Reserva</legend>
                         <label for="name" class="label">Nombre completo</label>
-                        <input class="input" type="text" id="nombre" placeholder="Ingrese nombre completo">
+                        <input class="input" type="text" id="nombre" placeholder="Ingrese nombre completo" required>
 
                         <label for="number" class="label">Cantidad de pasajeros</label>
                         <input class="input" type="text" id="pasajeros" placeholder="Ingrese cantidad de pasajeros">
 
                         <label for="llegada" class="label">Check in</label>
-                        <input class="input" type="date" id="checkin" placeholder="Ingrese fecha aquí">
+                        <input class="input" type="date" id="checkin" placeholder="Ingrese fecha aquí" required>
 
                         <label for="ida" class="label">Check out</label>
-                        <input class="input" type="date" id="checkout" placeholder="Ingrese fecha aquí">
+                        <input class="input" type="date" id="checkout" placeholder="Ingrese fecha aquí" required>
 
                         <label for="e-mail" class="label">Ingrese e-mail</label>
-                        <input class="input" id="mail" type="email" placeholder="Ingrese e-mail aquí">
+                        <input class="input" id="mail" type="email" placeholder="Ingrese e-mail aquí" required>
                         </fieldset>
 
                         <div class="reserva-2">
                         <button type="submit" id="boton" class="submit">Enviar</button>
                         <button type="reset" id="botonR" class="submit">Reset</button>
-                        </div>
-
                     </form>
-    
-                        <p>¡Reserva ya tu escapada con cancelación <br> gratuita y hasta un 30% de descuento!</p>
-                    
-    
                 </div>
-    
+
+                    <div>
+                        <p>¡Reserva ya tu escapada con cancelación <br> gratuita y hasta un 30% de descuento!</p>
+                    </div>
+
+                <div> 
+                    <h4> Condiciones de reserva </h4> 
+                    <p>Pago con transferencia bancaria tiene un 5% de descuento.
+                        la cancelacion antes de los 5 dias es gratis, pasado ese tiempo se bonifica el 50% de la habitacion.
+                        
+                    </p>
+                </div>
+                
             </section>
             
+            <section>
+                
+                <div class="reserva">
+                    <h2>Actividades</h2>
+                </div>
+    
+                <div  class="sectionActividades">
+                    <p> Aca podemos encuentrar una seleccion de algunas de las actividades
+                        en el area del hotel para disfrutar al máximo de unas vacaciones perfectas.
+                        Suscribite a nuestra newsletter y enterate de las actividades nuevas que tenemos para vos. </p>
+                </div>
+
+            </section> 
+
+<!--cards-->
+            <section class="cardS">
+                    <div class="card" >
+                        <div class="card-image ">
+                            <img  src="./assets/pequena-casa-madera-cubierta-nieve-cerca-lago-esmeralda-canada-invierno_181624-8973.jpg" alt=" casa-de-té">
+                        </div>
+                        <div class="card-description">
+                        <p class="text-title"><strong>Casita de té</strong></p>
+                        <p class="text-body">Te ofrece repostería artesanal y una amplia carta de tés para todos los gustos.</p>
+                        <button class="subscribe-btn">Suscribirse</button>
+                    </div>
+                        
+                    </div>
+            
+                    <div class="card" >
+                        <div class="card-image">
+                            <img src="./assets/celebrando-esquiadores-pie-montana-cubierta-nieve.jpg" alt="celebrando-esquiadores-pie-montana-cubierta-nieve">
+                        </div>
+
+                    <div class="card-description">
+                        <p class="text-title"> <strong>Excursiones en la montaña</strong></p>
+                        <p class="text-body">Disfruta de paisajes espectaculares por las montañas en un día. </p>
+                        
+                        <button  class="subscribe-btn">Suscribirse</button>
+                    </div>
+                    </div>
+            
+                    <div class="card" >
+                        <div class="card-image">
+                            <img src="./assets/retrato-familia-pista-patinaje.jpg" alt="familia-patinando">
+                        </div>
+                        <div class="card-description">
+                        <p class="text-title"><strong> Pista de patinaje</strong></p>
+                        <p class="text-body">Puedes patinar sobre hielo natural en la pista de hielo que abre exclusivamente en invierno.</p>
+                        <button class="subscribe-btn">Suscribirse</button>
+                    </div>
+                    </div>
+            
+                    <div class="card" >
+                        <div class="card-image">
+                            <img src="./assets/lace-sport-wood-smiling-fun.jpg" alt="snowbord">
+                        </div>
+                        <div class="card-description">
+                        <p class="text-title"> <strong>Centro de ski</strong></p>
+                        <p class="text-body">Clases de Ski & Snowboard a tarifas Low Cost, realiza tu compra anticipada.</p>
+                        <button  class="subscribe-btn">Suscribirse</button>
+                    </div>
+                    </div>
+            
+                </section>
+
+
+
+
         </main>
 
         
@@ -190,6 +334,10 @@
         </section>
         
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./bt-formulario.js"></script>
+    <script src="./eventos.js"></script>
     <script src="./main.js"></script>
 </body>
 </html>
