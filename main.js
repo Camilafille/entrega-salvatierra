@@ -2,9 +2,9 @@
 
 
     /*                         Entrega final:
-                                Objetos y Arrays. Metodos de arrays
+                                [Objetos y Arrays] Metodos de arrays
                                 [funciones y condicionales e iteraciones]
-                                generacion de Dom de forma dinamica. [Eventos]
+                                [generacion de Dom de forma dinamica]. [Eventos]
                                 Sintaxis avanzada
                                 [Al menos una libreria de uso relevante]
                                 Manejo de promesas con FETCH
@@ -79,27 +79,18 @@ fetch("./data.json")
 -------------------////////////////////---------------
 
 
-
-HOY JUEVES: [-Agregar una seccion con cards que tengan actividades.]
-            [- Agregar las  cards de las habitaciones.]
-            -Enforcarnos en el formulario.
-
-
-VIERNES:    [-Ver video final]
             -va a haber cards que permitan ver el precio de las habitaciones por noche asi uno puede
 calcular con mas o con menos la cuanto sale la cantidad de dias.
 y debajo un boton que diga reservar que te lleve a la reserva.
             
-            -[va a haber una seccion con las actividades que se ofrece en el hotel,
-estas son cards que tendran un boton que al hacerle click uno podra 
-ingresar un mail para suscribirse a la newsletter.]
+
 
 Sabado: -Otra idea es que cuando llegue a un numero de noches, aparezca un mensaje diciendo que a partir de la 7 ma noche 
 hay un descuento de 10% de alojamiento. 
 Pago con transferencia bancaria tiene un 5% de descuento (Esto lo podemos agregar como texto ya hecho
         -Agregar fetch*
         -Promesa y async
-
+        [-agregar paginas]
 
 domingo: - agregar sugar syntax y mejorar el codigo para  entregarlo
 
@@ -163,11 +154,10 @@ usuarios.forEach((usuario) => {
 
 --------------------------------
 
-¨podriamos agregar un box de sugerencias en algun lado?
+
 
 Podemos agregar un alert de descuento para el fin de semana para que reserven y lleve al formulario.
 
-Podemos agregar el resto de las paginas.
 
 Podemos hacer que aparezca primero un alert que aparece a los 5 segundos de abierta la pagina y luego
 aparece el de bienvenido. 
@@ -180,15 +170,6 @@ si no, volver a recargar el formulario
 
 
 
-
-
-    const div = document.createElement("div");
-    const h2 = document.createElement("h2");
-    
-    h2.textContent = Object.values(formDatos).join("  ");
-    
-    div.appendChild(h2);
-    document.body.appendChild(div);
 
 
 boton.addEventListener("click", () => {
@@ -248,33 +229,6 @@ usuarios.forEach((usuario) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const desestructurar = ({ nombre, edad }) => {
     console.log(nombre, edad);
 };
@@ -299,8 +253,6 @@ const desestructurar = (usuario) => {
 
 
 
-
-
 // Podemos hacer que aparezca primero un alert que aparece a los 5 segundos de abierta la pagina y luego
 // aparece el de bienvenido 
 
@@ -320,7 +272,7 @@ bienvenidaPagina();
 //lo uno con el apend a un id cuando quiera crear dom, ver  main.js parte dos
 
 let botonInfo = document.getElementById("botonInfo");
-let divHabitaciones = document.getElementById("divHabitaciones")
+let divHabitaciones = document.getElementById("divHabitaciones");
 botonInfo.addEventListener("click", async () => {
   
 fetch("./data.json")
@@ -335,10 +287,6 @@ fetch("./data.json")
   })
 
 
-})
+});
 
-  
-
-}
-
-)
+});

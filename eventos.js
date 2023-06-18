@@ -1,5 +1,6 @@
 //Eventos para el formulario
 
+let botonR = document.getElementById("botonR")
 let boton = document.getElementById("boton");
 boton.addEventListener("mouseover", () => {
     boton.className = "enviar" });
@@ -10,14 +11,19 @@ boton.className = "submit"});
 botonR.addEventListener("click" , () => {
     localStorage.clear();
     location.reload();
-} )
+} );
+let botonRes = document.getElementById("botonRese");
+botonRes.addEventListener("click", () => {
+    localStorage.clear();
+    location.reload();
+} );
 
+let seccion = document.getElementById("")
 /*
 Validacion del formulario
 */
 
 let pasajeros = document.getElementById("pasajeros")
-
 pasajeros.addEventListener("input", () => {
     let cantidadPasajeros = parseInt(pasajeros.value);
     if(cantidadPasajeros > 5) {
