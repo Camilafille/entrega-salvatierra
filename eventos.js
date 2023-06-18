@@ -12,8 +12,8 @@ botonR.addEventListener("click" , () => {
     localStorage.clear();
     location.reload();
 } );
-let botonRes = document.getElementById("botonRese");
-botonRes.addEventListener("click", () => {
+let botonRese = document.getElementById("botonRese");
+botonRese.addEventListener("click", () => {
     localStorage.clear();
     location.reload();
 } );
@@ -30,7 +30,7 @@ pasajeros.addEventListener("input", () => {
         
         Swal.fire('No se puede agregar mas de 5 pasajeros')
     }
-})
+});
 
 let mail = document.getElementById("mail");
 mail.addEventListener("input", () => {

@@ -16,15 +16,6 @@
 
     Esta pagina se trata sobre reservar en un hotel, va a tener lo siguiente:
 
-un formulario que cuenta con nombre y apellido
-cantidad de huespedes(podemos agregar que no debe pasar las 5 personas)
-tambien cuenta con fecha de llegada y fecha de salida. 
-a lo ultimo se pide el mail
-con validacion en el mail, debe llevar arroba.
-A esto le agregamos que cuando termines de completar todo se mande
-a la localstorage y se pueda ver en un alert. 
-cuando pongas aceptar a los cinco segundos debe aparecer un toast diciendo que 
-se envio la solicitud de reserva.
 
 Otra seccion:
 va a haber cards que permitan ver el precio de las habitaciones por noche asi uno puede
@@ -33,9 +24,6 @@ y debajo un boton que diga reservar que te lleve a la reserva.
 
 Otra seccion:
 
-va a haber una seccion con las actividades que se ofrece en el hotel,
-estas son cards que tendran un boton que al hacerle click uno podra 
-ingresar un mail para suscribirse a la newsletter.
 
 
 Asegurarse de usar una sintaxis mas compleja. sugar syntax
@@ -46,8 +34,6 @@ hay un descuento de 10% de alojamiento.
 Pago con transferencia bancaria tiene un 5% de descuento (Esto lo podemos agregar como texto ya hecho)
 ) 
 
-    *Otra opcion es agregar para ver dispoibilidad: pedis dia de llegaada, de ida y cantidad de personas y numero de habitaciones y 
-    que tenga un boton para buscar
 
 En cuanto al AJAX, podriamos hacer que guarde los precios de las habitaciones con id y nombre, y cuando hagamos click en 
 un boton, lo traiga en forma de alert. Para esto tenemos que filtrar el array ??????
@@ -90,11 +76,12 @@ hay un descuento de 10% de alojamiento.
 Pago con transferencia bancaria tiene un 5% de descuento (Esto lo podemos agregar como texto ya hecho
         -Agregar fetch*
         -Promesa y async
-        [-agregar paginas]
+        
 
 domingo: - agregar sugar syntax y mejorar el codigo para  entregarlo
 
-
+        - agregar un div en la pagina de resto para explicar que es un formulario de contacto
+        -agregar una seccion en la pagina de habitaciones con un boton de reserva.
 ////////////////////////////////7
 
 
@@ -169,66 +156,6 @@ si no, volver a recargar el formulario
 
 
 
-
-
-
-boton.addEventListener("click", () => {
-
-fetch("./data.json")
-.then((response) => response.json())
-.then((data) => {
-    data.forEach( () =>{
-        const li = document.createElement("li");
-        li.innerHTML = `
-
-        <h2> ID: ${usuario.id}</h2>
-        <p>ID: ${usuario.nombre}</p>
-        <b>ID: ${usuario.precio}</b>
-        <hr/> `;
-        lista.appen(li);
-    })
-})
-});
-
-//Podrias filtrar el arreglo
-
-<div id="container"></div>
-
-const usuarios = [
-  { id: 1, nombre: "Angeles", edad: 20 },
-  { id: 2, nombre: "Enzo", edad: 20 },
-  { id: 3, nombre: "Andres", edad: 20 },
-];
-
-let container = document.getElementById("container");
-
-const agregar = (id) => {
-  let encontrado = usuarios.find((usuario) => usuario.id === id);
-  console.log(encontrado);
-};
-
-usuarios.forEach((usuario) => {
-  let div = document.createElement("div");
-  div.innerHTML = `
-    <h2>ID: ${usuario.id}</h2>
-    <p>Nombre: ${usuario.nombre}</p>
-    <b>Edad: ${usuario.edad}</b>
-    <button id="boton${usuario.id}">Agregar</button>
-    <hr />
-  `;
-
-  container.append(div);
-
-  let boton = document.getElementById(`boton${usuario.id}`);
-
-  boton.addEventListener("click", () => agregar(usuario.id));
-});
-
-
-
-
-
-
 const desestructurar = ({ nombre, edad }) => {
     console.log(nombre, edad);
 };
@@ -249,6 +176,15 @@ const desestructurar = (usuario) => {
     let {nombre, edad} = usuario;
     console.log(nombre, edad);
 };
+
+
+
+
+
+
+
+
+
 */
 
 
@@ -269,24 +205,24 @@ const bienvenidaPagina = () =>{
 bienvenidaPagina();
 
 
-//lo uno con el apend a un id cuando quiera crear dom, ver  main.js parte dos
+let fetch = document.getElementById("fetch");
 
 let botonInfo = document.getElementById("botonInfo");
 let divHabitaciones = document.getElementById("divHabitaciones");
-botonInfo.addEventListener("click", async () => {
-  
 fetch("./data.json")
-.then((response) => response.json())
-.then((data) => {
-  data.forEach((habitacion) => {
-    const div= document.createElement("div");
-    div.innerHTML = `
-    <h2> Precio: ${habitacion.precio}</h2>
-    <hr />`;
-  divHabitaciones.append(div);
-  })
+    .then((response) => response.json())
+    .then((data) => {
+      data.forEach((usuario) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+          <h2>ID: ${usuario.id}</h2>
+          <p>Nombre: ${usuario.nombre}</p>
+          <b>Edad: ${usuario.edad}</p>
+          <hr />
+        `;
+
+        fetch.append(li);
+      });
+    });
 
 
-});
-
-});

@@ -6,7 +6,7 @@ let formulario = document.getElementById("formulario");
   formulario.addEventListener("submit", (e) => {
     e.preventDefault();
     let inputs = formulario.querySelectorAll(".input");
-    let formDatos = {};
+    const formDatos = {};
   inputs.forEach((input) => {
     formDatos[input.id] = input.value;
 // Aparecera un alert cuando se envie la solicitud
@@ -17,7 +17,7 @@ let formulario = document.getElementById("formulario");
       showConfirmButton: false,
       timer: 1500
     });
-    
+
   });
 
 // SE Guardan los valores en localStorage
@@ -54,20 +54,11 @@ botonSus.forEach((boton) => {
 });
 
 /*
-
-
-
-   */
-
-
- //
-  
- let formResto = document.getElementById("formResto");
+let formResto = document.getElementById("formResto");
  formResto.addEventListener("submit", (e) => {
    e.preventDefault();
    let inputsResto = formResto.querySelectorAll(".inputResto");
    let formR = {};
- 
     inputsResto.forEach((input) => {
       formR[input.id] = input.value;  
       
@@ -81,17 +72,51 @@ botonSus.forEach((boton) => {
    })
    .then((result) => {
      if (result.isConfirmed) {
-      localStorage.setItem("formR", JSON.stringify(formR));
-      formResto.reset();
- 
        Swal.fire(
          '¡Enviado!',
          'La información se ha enviado correctamente',
          'success'
-        );
-      }
+        )};
     });
+    localStorage.setItem("formR", JSON.stringify(formR));
+      formResto.reset();
+
   });
 });
 
 
+
+
+
+
+
+let formResto = document.getElementById("formResto");
+ formResto.addEventListener("submit", (e) => {
+   e.preventDefault();
+   let inputsResto = formResto.querySelectorAll(".inputResto");
+   const formR = {};
+    inputsResto.forEach((input) => {
+      formR[input.id] = input.value;  
+      
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Solicitud de reserva enviada',
+        showConfirmButton: false,
+        timer: 1500
+      });
+      
+    });
+  
+  // SE Guardan los valores en localStorage
+    localStorage.setItem("formDatos", JSON.stringify(formR));
+    formResto.reset();
+
+  });
+
+
+   */
+
+
+ //
+  
