@@ -29,14 +29,14 @@
 .correcto{
   background-color: #daf2f8;
   padding: 10px;
-        margin-bottom: 20px;
-        width: 100%;
-        font-size: 1rem;
-        color: #4a5568;
-        outline: none;
-        border: 1px solid transparent;
-        border-radius: 4px;
-        transition: all 0.2s ease-in-out; 
+  margin-bottom: 20px;
+  width: 100%;
+  font-size: 1rem;
+  color: #4a5568;
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out; 
 }
   li {
     list-style: none; }
@@ -712,9 +712,6 @@ padding-top: 40px;
     .box:hover img {
       filter: grayscale(0); }
 
-
-
-
       .botonHr {
         display: inline;
         padding: 10px 20px;
@@ -730,14 +727,7 @@ padding-top: 40px;
       .botonHr:hover {
         background-color: #333b49;
       }
-      
 
-
-
-
-
-
-      
       .formResto {
         margin: 30px;
         max-width: 344px;
@@ -792,5 +782,21 @@ padding-top: 40px;
         cursor: pointer;
         transition: all 0.2s ease-in-out; }
         .submit a {
-          text-decoration: none;
-          color: #fff; }
+        text-decoration: none;
+        color: #fff; }
+
+    .contacto h3{
+    font-size:30px;
+    color:aliceblue;
+    width: 100%;
+    background-color: #eb8440d2;
+    padding: 20px;
+    text-align: center;
+    }
+
+    .contacto p{
+    font-size:20px;
+    padding:20px;
+    text-align:center;
+    }
+          
