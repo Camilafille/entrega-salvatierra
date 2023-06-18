@@ -205,24 +205,26 @@ const bienvenidaPagina = () =>{
 bienvenidaPagina();
 
 
-let fetch = document.getElementById("fetch");
 
-let botonInfo = document.getElementById("botonInfo");
+let botonInfo = document.querySelectorAll(".accion");
 let divHabitaciones = document.getElementById("divHabitaciones");
+botonInfo.forEach((boton) => {
+    boton.addEventListener("click", () => {
+const habitacionId = boton.dataset.habitacionId;
 fetch("./data.json")
     .then((response) => response.json())
     .then((data) => {
-      data.forEach((usuario) => {
-        const li = document.createElement("li");
-        li.innerHTML = `
-          <h2>ID: ${usuario.id}</h2>
-          <p>Nombre: ${usuario.nombre}</p>
-          <b>Edad: ${usuario.edad}</p>
-          <hr />
-        `;
-
-        fetch.append(li);
-      });
+      const habitacion = data.find((habitacion) => habitacion.id === parseInt(habitacionId));
+      if(habitacion){
+        Swal.fire({
+          position: 'top-end',
+          icon: 'info',
+          title: `Precio de la habitación: ${habitacion.precio}`,
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
     });
-
-
+  });
+});
+      
