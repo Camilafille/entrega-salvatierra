@@ -1,9 +1,4 @@
 
- /*                         
-
-*/
-
-
 //Un toast de bienvenida
 
 const bienvenidaPagina = () =>{

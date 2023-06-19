@@ -9,6 +9,17 @@ let formulario = document.getElementById("formulario");
     const formDatos = {};
   inputs.forEach((input) => {
     formDatos[input.id] = input.value;
+  });
+  const cantidadPasajeros = parseInt(formDatos.pasajeros);
+//condicional: no se permite hacer una reservacion para mas de 7 personas
+  if (isNaN(cantidadPasajeros) || cantidadPasajeros > 7) {
+    Swal.fire({
+      title: 'Error',
+      text: 'La cantidad de pasajeros debe ser un número válido y no puede ser mayor a 7.',
+      icon: 'error'
+    });
+    return;
+  }
 // Aparecera un alert cuando se envie la solicitud
     Swal.fire({
       position: 'top-end',
@@ -17,9 +28,6 @@ let formulario = document.getElementById("formulario");
       showConfirmButton: false,
       timer: 1500
     });
-
-  });
-
 // SE Guardan los valores en localStorage
   localStorage.setItem("formDatos", JSON.stringify(formDatos));
   formulario.reset();
@@ -34,8 +42,9 @@ let formulario = document.getElementById("formulario");
     divAbajo.append(nuevoDiv);
 });
 
-  // Boton para suscribirse a la newsletter sobre actividades que se pueden hacer en el area del hotel, haciendo click en el boton de suscribirse 
 
+
+// Boton para suscribirse a la newsletter sobre actividades que se pueden hacer en el area del hotel, haciendo click en el boton de suscribirse 
 let botonSus = document.querySelectorAll(".subscribe-btn");
 
 botonSus.forEach((boton) => { 
@@ -55,28 +64,7 @@ botonSus.forEach((boton) => {
 
 
 
-let formResto = document.getElementById("formResto");
- formResto.addEventListener("submit", (e) => {
-   e.preventDefault();
-   let inputsResto = formResto.querySelectorAll(".inputResto");
-   const formR = {};
-    inputsResto.forEach((input) => {
-      formR[input.id] = input.value;  
-      
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Solicitud de reserva enviada',
-        showConfirmButton: false,
-        timer: 1500
-      });
-      
-    });
-  
-  // SE Guardan los valores en localStorage
-    localStorage.setItem("formR", JSON.stringify(formR));
-    formResto.reset();
 
-  });
+
 
 
