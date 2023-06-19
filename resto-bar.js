@@ -16,11 +16,12 @@ botonRese.addEventListener("click", () => {
 
 
 let formResto = document.getElementById("formResto");
- formResto.addEventListener("submit", (e) => {
-   e.preventDefault();
-   let inputsResto = formResto.querySelectorAll(".inputResto");
-   const formR = {};
-    inputsResto.forEach((input) => {
+  formResto.addEventListener("submit", (e) => {
+      e.preventDefault();
+    let inputsResto = formResto.querySelectorAll(".inputResto");
+    const formR = {};
+
+      inputsResto.forEach((input) => {
       formR[input.id] = input.value;  
       
       Swal.fire({
@@ -28,7 +29,7 @@ let formResto = document.getElementById("formResto");
         icon: 'success',
         title: 'Mensaje enviado',
         showConfirmButton: false,
-        timer: 1500
+        timer: 2000
       });
       
     });
@@ -44,15 +45,13 @@ let formResto = document.getElementById("formResto");
 
   let mailResto = document.getElementById("mailResto");
   mailResto.addEventListener("input", () => {
-      if(!mailResto.value.includes("@")){
-        mailResto.className = "incorrecto";
-          setTimeout( () => {
-            mailResto.classList.remove( "incorrecto");
-            mailResto.classList.add("correcto");
-                  }, 4000)
-      }else{ 
-        mailResto.className = "correcto";
-      }
-  });
+    mailResto.value.includes("@") ? mailResto.className = "correcto" : (
+      mailResto.className = "incorrecto",
+      setTimeout( () => {
+        mailResto.classList.remove("incorrecto");
+        mailResto.classList.add("correcto");
+      },4000)
+    );
+      });
   
 

@@ -14,7 +14,7 @@ const bienvenidaPagina = () =>{
 //Alert para que me aparezca una publicidad pasados los 5 segundos de ejecutarse la funcion de bienvenida
 
 const publicidad = () =>{
-   
+
     Swal.fire({
       title: 'Descuento Especial!',
       text: 'Este fin de semana ofrecemos un descuento del 15% en alojamiento.',
@@ -28,35 +28,48 @@ const publicidad = () =>{
 bienvenidaPagina();
 setTimeout(publicidad, 5000);
 
-//Alerts con el precio de habitacion cuando hacemos click en el boton info
+//Alerts con el precio de habitacion cuando hacemos click en el boton info con FETCH
 
 let botonInfo = document.querySelectorAll(".accion");
 let divHabitaciones = document.getElementById("divHabitaciones");
 
-botonInfo.forEach((boton) => {
-    boton.addEventListener("click", () => {
-const habitacionId = boton.dataset.habitacionId;
-fetch("./data.json")
-    .then((response) => response.json())
-    .then((data) => {
-      const habitacion = data.find(habitacion => habitacion.id === parseInt(habitacionId));
-      if(habitacion){
-        Swal.fire({
-          position: 'top-end',
-          icon: 'info',
-          title: `Precio de la habitación: $ ${habitacion.precio}`,
-          showConfirmButton: false,
-          timer: 1500
-        });
-      }
-    })
-    .catch((error) =>{
-      Swal.fire({
-        position: 'top-end',
-        icon: 'error',
-        title: `Error`,
-        text: `Hubo un error al mostrar la información`
-      });
-    })
+//funcion 1 para que se muestre el precio en caso de no haber error
+
+const infoHabitacion = (habitacion) => {
+  Swal.fire({
+    position: 'top-end',
+    icon: 'info',
+    title: `Precio de la habitación por noche es: $ ${habitacion.precio}`,
+    showConfirmButton: false,
+    timer: 3000
+  });
+}
+
+//funcion 2 para que se muestre el mensaje de error
+
+const habitacionError = () => {
+  Swal.fire({
+    position: 'top-end',
+    icon: 'error',
+    title: `Error`,
+    text: `Hubo un error al mostrar la información`
+  });
+}
+
+//obtenemos la informacion de la habitacion desde un servidor local
+botonInfo.forEach((boton) => { 
+  boton.addEventListener("click", async () => {
+  const habitacionId = boton.dataset.habitacionId;
+  try{
+  const response = await fetch("./data.json")
+  const data = await response.json();
+  const habitacion = data.find(({id}) => id === parseInt(habitacionId));
+
+  //uso de operador ternario para definir cual mensaje mostrar
+  habitacion ? infoHabitacion(habitacion) : habitacionError();
+
+    } catch {
+      habitacionError();
+    }
   });
 });

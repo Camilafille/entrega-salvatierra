@@ -26,7 +26,7 @@ let formulario = document.getElementById("formulario");
       icon: 'success',
       title: 'Solicitud de reserva enviada',
       showConfirmButton: false,
-      timer: 1500
+      timer: 2000
     });
 // SE Guardan los valores en localStorage
   localStorage.setItem("formDatos", JSON.stringify(formDatos));
