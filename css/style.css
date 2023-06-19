@@ -415,11 +415,6 @@
 }
 
 
-
-
-
-
-
 .cardHabitacion {
   max-width: 380px;;
   border-radius: 0.5rem;
@@ -769,7 +764,7 @@ padding-top: 40px;
       .inputResto:valid {
         border: 1px solid #010020; }
       
-      .inputRestot:invalid {
+      .inputResto:invalid {
         border: 1px solid rgba(14, 14, 14, 0.116); }
       
       .submitResto {

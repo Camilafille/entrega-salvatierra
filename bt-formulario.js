@@ -53,41 +53,6 @@ botonSus.forEach((boton) => {
     
 });
 
-/*
-let formResto = document.getElementById("formResto");
- formResto.addEventListener("submit", (e) => {
-   e.preventDefault();
-   let inputsResto = formResto.querySelectorAll(".inputResto");
-   let formR = {};
-    inputsResto.forEach((input) => {
-      formR[input.id] = input.value;  
-      
-    Swal.fire({
-    title: '¿Esta información es correcta?',
-    con: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: ' #ff802b',
-    cancelButtonColor: '#d33',
-    confirmButtonText: 'Sí, enviarlo'
-   })
-   .then((result) => {
-     if (result.isConfirmed) {
-       Swal.fire(
-         '¡Enviado!',
-         'La información se ha enviado correctamente',
-         'success'
-        )};
-    });
-    localStorage.setItem("formR", JSON.stringify(formR));
-      formResto.reset();
-
-  });
-});
-
-
-
-
-
 
 
 let formResto = document.getElementById("formResto");
@@ -109,14 +74,9 @@ let formResto = document.getElementById("formResto");
     });
   
   // SE Guardan los valores en localStorage
-    localStorage.setItem("formDatos", JSON.stringify(formR));
+    localStorage.setItem("formR", JSON.stringify(formR));
     formResto.reset();
 
   });
 
 
-   */
-
-
- //
-  

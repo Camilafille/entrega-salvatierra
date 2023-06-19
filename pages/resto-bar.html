@@ -82,24 +82,22 @@
         <p> Dejanos tus sugerencias o dudas por acá! <br>o llamanos al (239) 555-0108. </p>
     </div>
     <div class="reservaForm" >
-        <form method="post" class="formResto" id="formResto">
-            <fieldset>
+        <form method="post" class="formRestobar" id="formResto">
+        <fieldset>
             <legend class="titleResto">Contacto</legend>
             <label for="name" class="labelResto">Nombre completo</label>
             <input class="inputResto" type="text" id="nombreResto" placeholder="Ingrese nombre completo" required>
 
             <label for="e-mail" class="labelResto">Ingrese e-mail</label>
             <input class="inputResto" id="mailResto" type="email" placeholder="Ingrese e-mail aquí" required>
-            </fieldset>
 
             <label for="mensaje" class="labelResto">Mensaje</label>
-            <textarea id="mensaje"  class="inputResto" required></textarea>
-
+            <textarea id="mensajeResto"  class="inputResto" required></textarea>
+        </fieldset>
             <div class="reserva-2">
-            <button type="submit" id="botonResto" class="submitResto">Enviar</button>
-            <button type="reset" id="botonRese" class="submitResto">Reset</button>
+               <button type="submit" id="botonResto" class="submitResto">Enviar</button>
+               <button type="reset" id="botonRese" class="submitResto">Reset</button>
             </div>
-
         </form>
     </div>
         
@@ -121,7 +119,7 @@
                     <li><a href="../pages/pge-not-found.html"><img src="../assets/Twitter.png" alt="icono-twitter"></a> </li>
                 </ul>
             </div>
-                </div>
+                
             <div class="barraFooter-2">
                 <h3>CONTACTO</h3>
                 <ul>
@@ -130,9 +128,12 @@
                     <li>tranthuy.nute@gmail.com</li>
                 </ul>
             </div>
-        </seCtion>
+        </section>
     </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../eventos.js"></script>
     <script src="../bt-formulario.js"></script>
+
 </body>
 </html>

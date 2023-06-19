@@ -2,47 +2,49 @@
 
 let botonR = document.getElementById("botonR");
 let boton = document.getElementById("boton");
+let botonRese = document.getElementById("botonRese");
+let botonResto = document.getElementById("botonResto");
 
 boton.addEventListener("mouseover", () => {
-    boton.className = "enviar" });
+    boton.className = "enviar"; });
 
 boton.addEventListener("mouseout", () => {
-boton.className = "submit"});
+    boton.className = "submit";});
 
 botonR.addEventListener("click" , () => {
     localStorage.clear();
-    location.reload();
+        location.reload();
 } );
 
-let botonRese = document.getElementById("botonRese");
+
+botonResto.addEventListener("mouseover", () => {
+    botonResto.className = "enviar" });
+
+botonResto.addEventListener("mouseout", () => {
+    botonResto.className = "submit"});
+        
 botonRese.addEventListener("click", () => {
     localStorage.clear();
-    location.reload();
+        location.reload();
 } );
 
 
-
-
-
-
-let seccion = document.getElementById("")
 /*
 Validacion del formulario
+
 */
 
-let pasajeros = document.getElementById("pasajeros")
+let pasajeros = document.getElementById("pasajeros");
 pasajeros.addEventListener("input", () => {
     let cantidadPasajeros = parseInt(pasajeros.value);
-    if(cantidadPasajeros > 5) {
-        
+    if(isNaN(cantidadPasajeros) ||cantidadPasajeros > 5) {   
         Swal.fire({
             title: 'Error',
-            text: 'No se puede agregar más de 5 pasajeros',
+            text: 'Ingresar un número válido de pasajeros y no puede ser mayor a 5 pasajeros',
             icon: 'error'
           });
-    }
-});
-
+        }
+    });
 
 let mail = document.getElementById("mail");
 mail.addEventListener("input", () => {
