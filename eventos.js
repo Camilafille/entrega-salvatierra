@@ -15,7 +15,7 @@ botonR.addEventListener("click" , () => {
 } );
 
 
-let mail = document.getElementById("mail");
+let mail = document.getElementById("email");
 mail.addEventListener("input", () => {
     if(!mail.value.includes("@")){
         mail.className = "incorrecto";
